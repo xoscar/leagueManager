@@ -1,0 +1,58 @@
+{
+  "name": "LeagueCompositions",
+  "productName": "League of Legends Manager",
+  "version": "0.0.1",
+  "main": "main/index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "next build renderer && next export renderer",
+    "dist": "npm run build && build --dir"
+  },
+  "build": {
+    "asar": false,
+    "extraResources": [
+      {
+        "from": "renderer/out",
+        "to": "app/renderer"
+      }
+    ],
+    "mac": {
+      "icon": "assets/mac/icon.ico"
+    }
+  },
+  "devDependencies": {
+    "animate.css": "^3.5.2",
+    "autoprefixer": "7.1.5",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-wrap-in-js": "^1.1.0",
+    "dotenv": "^4.0.0",
+    "electron": "^1.7.9",
+    "electron-builder": "^19.36.0",
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-react": "^6.10.0",
+    "eslint-plugin-security": "^1.2.0",
+    "glob": "^7.1.2",
+    "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.2.1",
+    "localStorage": "^1.0.3",
+    "materialize-css": "^0.100.2",
+    "next": "^4.0.3",
+    "node-sass": "^4.4.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-loader": "^2.0.7",
+    "raw-loader": "^0.5.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-materialize": "^1.0.16",
+    "sass-loader": "^6.0.6",
+    "url-loader": "^0.6.2"
+  },
+  "dependencies": {
+    "electron-is-dev": "0.3.0",
+    "electron-next": "3.0.8"
+  }
+}

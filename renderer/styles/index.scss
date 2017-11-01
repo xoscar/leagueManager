@@ -1,0 +1,31 @@
+// font path
+$roboto-font-path: "/static/fonts/roboto/";
+
+// colors
+$primary-color: #5E35B1;
+$primary-color-light: #B39DDB;
+$primary-color-dark: #4527A0;
+$secondary-color: #B388FF;
+$success-color: #B388FF;
+$error-color: #D32F2F;
+$link-color: #fafafa;
+$input-border-color: $secondary-color;
+$carousel-height: 270px;
+
+@import '../../node_modules/materialize-css/sass/materialize.scss';
+@import '../../node_modules/animate.css/animate.css';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400');
+
+// Personalized styles
+.primary-background { background: $primary-color }
+.primary-dark-background { background: $primary-color-dark }
+
+.carousel .indicators .indicator-item {
+	background-color: $secondary-color
+}
+
+.carousel .indicators .indicator-item.active {
+	background-color: $primary-color
+}
+

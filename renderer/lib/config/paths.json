@@ -1,0 +1,5 @@
+{
+	"summoner": {
+		"info": "/lol/summoner/v3/summoners/by-name/{{0}}"
+	}
+}

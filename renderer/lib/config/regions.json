@@ -1,0 +1,57 @@
+[
+  {
+    "code": "NA",
+    "urlCode": "NA1",
+    "url": "na1.api.riotgames.com"
+  },
+  {
+    "code": "LAN",
+    "urlCode": "LA1",
+    "url": "la1.api.riotgames.com"
+  },
+  {
+    "code": "LAS",
+    "urlCode": "LA2",
+    "url": "la2.api.riotgames.com"
+  },
+  {
+    "code": "BR",
+    "urlCode": "BR1",
+    "url": "br1.api.riotgames.com"
+  },
+  {
+    "code": "EUNE",
+    "urlCode": "EUN1",
+    "url": "eun1.api.riotgames.com"
+  },
+  {
+    "code": "EUW",
+    "urlCode": "EUW1",
+    "url": "euw1.api.riotgames.com"
+  },
+  {
+    "code": "JP",
+    "urlCode": "JP1",
+    "url": "jp1.api.riotgames.com"
+  },
+  {
+    "code": "KR",
+    "urlCode": "KR",
+    "url": "kr.api.riotgames.com"
+  },
+  {
+    "code": "OCE",
+    "urlCode": "OC1",
+    "url": "oc1.api.riotgames.com"
+  },
+  {
+    "code": "TR",
+    "urlCode": "TR1",
+    "url": "tr1.api.riotgames.com"
+  },
+  {
+    "code": "RU",
+    "urlCode": "RU",
+    "url": "ru.api.riotgames.com"
+  }
+]
