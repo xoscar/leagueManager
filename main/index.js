@@ -8,15 +8,18 @@ const isDev = require('electron-is-dev');
 const prepareNext = require('electron-next');
 
 // workflow
-const Store = require('./store');
+const Store = require('./integrations/store');
+const { Summoner } = require('./integrations/riot');
 
 app.on('ready', async () => {
   await prepareNext('./renderer');
   const store = Store();
+  const summoner = Summoner();
 
   const userConfig = await store.listen({
     name: 'userConfig',
   });
+  summoner.listen();
 
   userConfig.send();
 

@@ -1,11 +1,13 @@
 // components
-import Login from '../components/login';
+import Login from '../components/login/Login';
 
 // layout
 import Page from '../layouts/page';
 
-export default () => (
+const Start = () => (
   <Page>
-    <Login />
+    <Login/>
   </Page>
 );
+
+export default Start;

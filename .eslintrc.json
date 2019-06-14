@@ -21,6 +21,7 @@
     "security/detect-disable-mustache-escape": 2,
     "security/detect-new-buffer": 2,
     "no-dupe-keys": 2,
+    "react/jsx-fragments": 0,
     "array-bracket-spacing": 0,
     "no-underscore-dangle": 0,
     "no-console": 0,

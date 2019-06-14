@@ -1,24 +1,23 @@
 // dependencies
 import Router from 'next/router';
+import PropTypes from 'prop-types';
 
 // components
-import Meta from '../components/meta';
-import Footer from '../components/footer';
+import Meta from '../components/common/Meta';
 
 // libs
-import configLoader from '../lib/config/loader';
+import Settings from '../models/settings';
 
-const page = ({ children }) => (
-  <div>
+const Page = ({ children }) => (
+  <>
     <Meta/>
-    { children }
-    <Footer/>
-  </div>
+    {children}
+  </>
 );
 
-page.getInitialProps = ({ pathname }) => {
+Page.getInitialProps = ({ pathname }) => {
   if (pathname !== '/start') {
-    configLoader('userConfig')
+    Settings('userConfig')
 
     .then(userConfig => (
       Promise.resolve({
@@ -32,4 +31,8 @@ page.getInitialProps = ({ pathname }) => {
   return Promise.resolve({});
 };
 
-export default page;
+Page.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
+export default Page;

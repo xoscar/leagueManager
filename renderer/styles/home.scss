@@ -1,0 +1,22 @@
+.matchCard {
+  background: $primary-color;
+  color: white;
+
+  img.championImg {
+    height: 128px;
+  }
+
+  .matchContent > div {
+    max-height: 128px;
+  }
+
+  .info {
+    background: $primary-color-dark;
+  }
+
+  .stats {
+    label {
+      margin-bottom: .3rem;
+    }
+  }
+}

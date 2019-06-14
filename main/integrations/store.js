@@ -2,7 +2,6 @@ const electron = require('electron');
 const { join } = require('path');
 const fs = require('fs');
 const { promisify } = require('util');
-
 const { ipcMain } = require('electron');
 
 const readFile = promisify(fs.readFile);

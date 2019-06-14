@@ -1,5 +1,5 @@
 import localStorage from 'localStorage';
-import Store from '../store';
+import Store from '../../renderer/lib/store';
 
 export default async (type) => {
   const config = localStorage.getItem(type);
