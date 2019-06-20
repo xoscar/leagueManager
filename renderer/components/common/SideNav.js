@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Row, Col, Container } from 'reactstrap';
 import Link from 'next/link';
 
@@ -16,26 +15,22 @@ const SideNav = () => {
   );
 
   return (
-    <Container className={`sideNav p-0 vh-100 ${(isOpen && 'isOpen') || ''}`} fluid="true">
+    <Container className={`shadow-depth-2 sideNav h-100 p-0 ${(isOpen && 'isOpen') || ''}`} fluid>
       <HamburgerButton />
-      <Row className="my-5">
+      <Row className="py-5">
         <Col xs="12">
           <ul>
-            <li><Link href="/home">Home</Link></li>
-            <li><Link href="/start">Summoners</Link></li>
-            <li><Link href="/home">Champions</Link></li>
-            <li><Link href="/home">Compositions</Link></li>
-            <li><Link href="/home">Pro's</Link></li>
+            <li><h4><Link href="/home">Home</Link></h4></li>
+            <li><h4><Link href="/start">Summoners</Link></h4></li>
+            <li><h4><Link href="/home">Champions</Link></h4></li>
+            <li><h4><Link href="/home">Compositions</Link></h4></li>
+            <li><h4><Link href="/home">Pro's</Link></h4></li>
           </ul>
         </Col>
       </Row>
       <UserOptions/>
     </Container>
   );
-}
-
-SideNav.propTypes = {
-  show: PropTypes.bool.isRequired,
 };
 
 export default SideNav;

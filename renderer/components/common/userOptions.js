@@ -4,11 +4,11 @@ import { Row, Col, Dropdown, DropdownToggle, DropdownItem, DropdownMenu } from '
 import Link from 'next/link';
 
 // providers
-import { useConfig } from '../../providers/Config';
+import { useSummoner } from '../../providers/Summoner';
 
 const UserOptions = () => {
   const [isOpen, setOpen] = useState(false);
-  const [{ name, region }] = useConfig();
+  const [{ name, region }] = useSummoner();
 
   return (
     <Row className="my-5 userOptions justify-content-center">

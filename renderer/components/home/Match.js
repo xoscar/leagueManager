@@ -2,18 +2,20 @@ import PropTypes from 'prop-types';
 import { Container, Row, Col, Label } from 'reactstrap';
 
 const items = ['http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/2302.png', 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/3107.png', 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/2032.png', 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/3117.png', 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/3504.png', 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/2031.png', 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/3364.png'];
-const spells = ['http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/SummonerFlash.png', 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/SummonerExhaust.png'];
 
-const Match = ({ match }) => {
+const Match = ({ match: { champion, details: { participant } } }) => {
+  const { spells } = participant;
+
   const ChampionImage = () => (
     <Col xs="auto" className="champion">
-      <img src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/Karma.png" className="img-fluid championImg"/>
+      <img src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${champion.name}.png`} className="img-fluid championImg"/>
     </Col>
   );
 
   const SpellsImages = () => (
     <Col xs="auto" className="spells">
-      { spells.map((src, index) => <div key={`spell-${index}`} className="summoner-wrapper"><img src={src} className="responsive-img"/></div>) }
+      <div className="summoner-wrapper"><img src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/${spells.spell1Id}.png`} className="responsive-img"/></div>
+      <div className="summoner-wrapper"><img src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/${spells.spell2Id}.png`} className="responsive-img"/></div>
     </Col>
   );
 
@@ -22,7 +24,7 @@ const Match = ({ match }) => {
       <Container className="h-100">
         <Row className="align-items-center h-100">
           <Col xs="12">
-            <Label>Karma</Label>
+            <Label>{champion.name}</Label>
           </Col>
           <Col xs="12">
             <Label>A+ / +232 IP</Label>
@@ -82,7 +84,7 @@ const Match = ({ match }) => {
 
   return (
     <Container className="matchCard shadow-depth-1 p-0">
-      <Row className="no-gutters matchContent">
+      <Row className="no-gutters matchContent my-3">
         <ChampionImage/>
         <SpellsImages/>
         <Stats/>

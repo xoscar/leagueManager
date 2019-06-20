@@ -7,7 +7,7 @@ import SideNav from '../components/common/SideNav';
 const Main = ({ children }) => (
   <Container fluid={true}>
     <Row>
-      <Col sm="4" md="3" xs="auto" lg="2" className="shadow-depth-2 primary-background vh-100 p-0">
+      <Col sm="4" md="3" xs="auto" lg="2" className="primary-background vh-100 p-0">
         <SideNav/>
       </Col>
       <Col xs="12" sm="8" md="9" lg="10">

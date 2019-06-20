@@ -54,6 +54,7 @@
     "electron-is-dev": "0.3.0",
     "electron-next": "3.0.8",
     "prop-types": "^15.7.2",
+    "query-string": "^6.7.0",
     "reactstrap": "^8.0.0"
   }
 }

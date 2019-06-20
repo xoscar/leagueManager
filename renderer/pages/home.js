@@ -11,26 +11,24 @@ import Main from '../layouts/main';
 // components
 import Matches from '../components/home/Matches';
 import Ranking from '../components/home/Ranking';
-import Masteries from '../components/home/Masteries';
 import Title from '../components/home/Title';
 
 // providers
-import { ConfigProvider } from '../providers/Config';
+import { SummonerProvider } from '../providers/Summoner';
 
 const Home = ({ userConfig }) => (
   <Page>
-    <ConfigProvider userConfig={userConfig}>
+    <SummonerProvider userConfig={userConfig}>
       <Main>
         <Title text="Home"/>
-        <Row>
-          <Matches userConfig={userConfig} />
-          <Col xs="12">
-            <Ranking userConfig={userConfig} />
-            <Masteries userConfig={userConfig} />
+        <Row className="justify-content-sm-around mt-sm-4">
+          <Matches />
+          <Col xs="12" md="5">
+            <Ranking />
           </Col>
         </Row>
       </Main>
-    </ConfigProvider>
+    </SummonerProvider>
   </Page>
 );
 

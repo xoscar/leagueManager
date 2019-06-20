@@ -6,14 +6,13 @@ import regions from '../../../main/config/regions.json';
 
 // hooks
 import { useInputHandler, useHandleSubmit } from '../../hooks/handlers';
-import Summoner from '../../models/summoner';
+import { info } from '../../models/summoner';
 
 const LoginForm = ({ onLogin }) => {
   const [{ name, region }, inputHandler] = useInputHandler({ region: regions[0].code, name: null });
   const [, handleSubmit] = useHandleSubmit();
 
   const addSummoner = async () => {
-    const { info } = Summoner();
     const summonerInfo = await info({ summonerId: name, region });
     return onLogin({ ...summonerInfo, region, summonerName: name });
   };

@@ -1,7 +1,10 @@
 import { createContext, useReducer, useContext } from 'react';
 import PropTypes from 'prop-types';
 
-const ConfigContext = createContext();
+// models
+import Summoner from '../models/summoner';
+
+const SummonerContext = createContext();
 
 const reducer = (state = null, action) => {
   switch (action) {
@@ -11,25 +14,25 @@ const reducer = (state = null, action) => {
   }
 };
 
-const ConfigProvider = ({ children, userConfig = null }) => {
-  const contextValue = useReducer(reducer, userConfig);
+const SummonerProvider = ({ children, userConfig = {} }) => {
+  const contextValue = useReducer(reducer, Summoner(userConfig));
   return (
-    <ConfigContext.Provider value={contextValue}>
+    <SummonerContext.Provider value={contextValue}>
       {children}
-    </ConfigContext.Provider>
+    </SummonerContext.Provider>
   );
 };
 
-ConfigProvider.propTypes = {
+SummonerProvider.propTypes = {
   children: PropTypes.any.isRequired,
   userConfig: PropTypes.object.isRequired,
 };
 
-const useConfig = () => (
-  useContext(ConfigContext)
+const useSummoner = () => (
+  useContext(SummonerContext)
 );
 
 export {
-  useConfig,
-  ConfigProvider,
+  useSummoner,
+  SummonerProvider,
 };

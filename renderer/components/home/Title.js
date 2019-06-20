@@ -2,15 +2,15 @@ import PropTypes from 'prop-types';
 import { Row, Col, Form, Label, Input, FormGroup } from 'reactstrap';
 
 const Title = ({ text = '' }) => (
-  <Row className="justify-content-around align-items-center">
-    <Col xs="4">
-      <h3>{text}</h3>
+  <Row className="justify-content-around justify-content-sm-between my-2 align-items-center titleWrapper">
+    <Col xs="3">
+      <h2>{text}</h2>
     </Col>
-    <Col xs="4">
+    <Col xs="5" sm="8" md="auto">
       <Form inline>
-        <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-          <Input id="icon_prefix" type="text" className="mr-sm-2" />
-          <Label htmlFor="icon_prefix">Summoner</Label>
+        <FormGroup>
+          <Label htmlFor="icon_prefix" className="summonerLabel">Summoner</Label>
+          <Input id="icon_prefix" type="text" />
         </FormGroup>
       </Form>
     </Col>
